@@ -37,7 +37,7 @@
 	<body>
 		<div class="wrapper">
 			<h1 class="header">Uploaded Files</h1>
-			<?php foreach($name as $key => $image_name): if($has_image): ?>
+			<?php if(isset($_POST['submit'])): foreach($name as $key => $image_name): if($has_image): ?>
 			<div class="image-details">
 				<div class="image-container">
 					<img class="photo" src="<?php echo $dir.'/'.$image_name ?>">
@@ -49,7 +49,7 @@
 					<p><b>Size:</b> <span><?php echo round($size[$key] / 1024) ?></span> <b>KB</b></p>
 				</div>
 			</div>
-			<?php endif; endforeach; ?>
+			<?php endif; endforeach; endif;?>
 		</div>
 	</body>
 </html>
